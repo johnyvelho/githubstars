@@ -19,7 +19,7 @@ class Home extends Component {
     }
 
     redirectToLogin() {
-        if (this.state.secsToRedirect == 0) {
+        if (this.state.secsToRedirect === 0) {
             redirectToLoginIfNotAuthenticated();
             return true;
         }

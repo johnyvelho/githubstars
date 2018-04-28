@@ -9,6 +9,7 @@ import Routes from './../components/Routes';
 import {client} from "./../util/ApolloClient"
 
 import 'tachyons/css/tachyons.min.css';
+import 'element-theme-default';
 import './../assets/css/style.css';
 
 class App extends Component {
