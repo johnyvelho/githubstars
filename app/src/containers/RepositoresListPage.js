@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { redirectToLoginIfNotAuthenticated } from './../util/Auth';
 
-import Header from './../components/Header';
+import Header from './Header';
 import UserCard from "../components/UserCard";
 import RepositorieList from "../components/RepositorieList";
 

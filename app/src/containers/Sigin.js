@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import queryString from 'query-string';
 import { setUserToken } from './../util/Auth';
 import * as Api from './../util/Api';
+
 import logo from './../assets/images/logo.svg';
 import { Loading } from 'element-react';
 
@@ -10,6 +11,10 @@ class Sigin extends Component {
 
     constructor(props) {
         super(props);
+
+        this.state = {
+            tokenSetted: false
+        }
     }
 
     componentDidMount() {
