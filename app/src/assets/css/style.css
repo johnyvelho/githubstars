@@ -88,6 +88,11 @@ input {
     font-size: 14px;
     line-height: 16px;
     margin-bottom: 16px; }
+    .user-card .user-card__list li a {
+      color: inherit; }
+    .user-card .user-card__list li.user-card__list--users a {
+      margin-right: 5px;
+      display: inline-block; }
     .user-card .user-card__list li:last-child {
       margin-bottom: 0; }
     .user-card .user-card__list li:before {

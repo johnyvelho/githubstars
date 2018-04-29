@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { isAuthenticated, redirectToLoginIfNotAuthenticated, login_url } from './../util/Auth';
 import logo from './../assets/images/logo.svg';
+import HomeSearch from "../components/HomeSearch";
 
 class Home extends Component {
 
@@ -38,10 +39,7 @@ class Home extends Component {
                         <Link to="/"><img src={logo} alt=""/></Link>
                     </h1>
                     {isAuthenticated() ?
-                        <div id="main-search" className="w-75 center">
-                            <input type="text" className="dib w-100" placeholder="github username"/>
-                            <button className="button-search">Search</button>
-                        </div>
+                        <HomeSearch />
                     :
                         <p className="f3 lh-copy">
                             Sigin to use the app! <br/>

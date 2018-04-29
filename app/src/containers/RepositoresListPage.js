@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import { compose, graphql } from 'react-apollo';
 import { redirectToLoginIfNotAuthenticated } from './../util/Auth';
 
 import Header from './Header';
 import UserCard from "../components/UserCard";
 import RepositorieList from "../components/RepositorieList";
+import {getStarredRepositoresUserBySearch} from "../graphql/queries/getStarredRepositoriesUserBySearch";
 
 class RepositoresListPage extends Component {
 
@@ -13,19 +14,32 @@ class RepositoresListPage extends Component {
     }
 
     componentDidMount() {
-
     }
 
     render() {
+        const { fetchStarredRepositories } = this.props;
+
         return (
             <div className="main-content center">
                 <Header/>
                 <div className="flex flex-wrap">
                     <div className="w-20">
-                        <UserCard/>
+                        {!  fetchStarredRepositories.loading && fetchStarredRepositories.search.edges.length > 0 &&
+                            <UserCard data={{
+                                avatarUrl: fetchStarredRepositories.search.edges[0].node.avatarUrl,
+                                name: fetchStarredRepositories.search.edges[0].node.name,
+                                login: fetchStarredRepositories.search.edges[0].node.login,
+                                bio: fetchStarredRepositories.search.edges[0].node.bio,
+                                location: fetchStarredRepositories.search.edges[0].node.location,
+                                websiteUrl: fetchStarredRepositories.search.edges[0].node.websiteUrl,
+                                organizations: fetchStarredRepositories.search.edges[0].node.organizations,
+                            }}/>
+                        }
                     </div>
                     <div className="w-80">
-                        <RepositorieList data={[]}/>
+                        {! fetchStarredRepositories.loading && fetchStarredRepositories.search.edges.length > 0 &&
+                            <RepositorieList data={fetchStarredRepositories.search.edges[0].node.starredRepositories.nodes}/>
+                        }
                     </div>
                 </div>
             </div>
@@ -33,4 +47,16 @@ class RepositoresListPage extends Component {
     }
 }
 
-export default RepositoresListPage;
+export default compose(
+    graphql(getStarredRepositoresUserBySearch, {
+        name: 'fetchStarredRepositories',
+        options: (props) => {
+            return {
+                variables: {
+                    query: props.match.params.search,
+                    qty: 15
+                }
+            }
+        }
+    })
+)(RepositoresListPage);

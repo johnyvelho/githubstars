@@ -8,9 +8,9 @@ class RepositorieList extends Component {
         return (
             <div className="box-content-list">
                 <ul>
-                    <li><RepositorieListItem data={{}}/></li>
-                    <li><RepositorieListItem data={{}}/></li>
-                    <li><RepositorieListItem data={{}}/></li>
+                    {this.props.data.map((item, key) =>
+                        <li key={key}><RepositorieListItem data={item}/></li>
+                    )}
                 </ul>
             </div>
         );

@@ -113,6 +113,14 @@ input {
       line-height: 16px;
       margin-bottom: 16px;
 
+      a {
+        color: inherit;
+      }
+
+      &.user-card__list--users {
+        a { margin-right: 5px; display: inline-block; }
+      }
+
       &:last-child {
         margin-bottom: 0;
       }
