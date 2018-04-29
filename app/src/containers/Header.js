@@ -3,10 +3,8 @@ import { Link } from "react-router-dom";
 import { compose, graphql } from 'react-apollo'
 import { redirectToLoginIfNotAuthenticated } from './../util/Auth';
 import { viewer } from "../graphql/queries/viewer";
-import ProgressiveImage from "react-progressive-image-loading";
 
 import logo from './../assets/images/logo.svg';
-import userPlaceholder from './../assets/images/user.svg';
 
 class Home extends Component {
 
