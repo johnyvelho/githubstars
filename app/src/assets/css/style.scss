@@ -2,6 +2,8 @@
 @import "_variable.scss";
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
 
+html,body { height:100%; }
+
 body {
   font-family: 'Roboto';
   font-size: 16px;
@@ -200,5 +202,14 @@ input {
       background: $color1;
       color: #fff;
     }
+  }
+}
+
+.not-found {
+  .not-found__text {
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 38px;
+    margin-top: 32px;
   }
 }

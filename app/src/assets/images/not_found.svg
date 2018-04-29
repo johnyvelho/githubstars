@@ -1,0 +1,32 @@
+<svg width="92" height="81" viewBox="0 0 92 81" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" fill="none">
+<g id="Group 8">
+<g id="Ellipse">
+<ellipse cx="10.6585" cy="18.9931" rx="10.6585" ry="18.9931" fill="white"/>
+<g mask="url(#path0_ins)">
+<ellipse cx="10.6585" cy="18.9931" rx="10.6585" ry="18.9931" stroke-width="4" stroke="#5152B7"/>
+</g>
+</g>
+<g id="Ellipse_2">
+<ellipse cx="10.6585" cy="18.9931" rx="10.6585" ry="18.9931" transform="translate(70.6829 0)" fill="white"/>
+<g mask="url(#path1_ins)" transform="translate(70.6829 0)">
+<ellipse cx="10.6585" cy="18.9931" rx="10.6585" ry="18.9931" stroke-width="4" stroke="#5152B7"/>
+</g>
+</g>
+<g id="Ellipse 2">
+<path d="M 82.4634 21.7862C 82.4634 6.36032 62.9483 0 40.9512 0C 18.9541 0 0 6.36032 0 21.7862" stroke-width="2" transform="translate(5.60986 59.2138)" stroke="#5152B7"/>
+</g>
+</g>
+</g>
+<defs>
+
+<mask id="path0_ins" fill="white">
+<ellipse cx="10.6585" cy="18.9931" rx="10.6585" ry="18.9931"/>
+</mask>
+<mask id="path1_ins" fill="white">
+<ellipse cx="10.6585" cy="18.9931" rx="10.6585" ry="18.9931"/>
+</mask>
+
+</defs>
+</svg>
+

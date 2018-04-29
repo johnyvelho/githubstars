@@ -16,7 +16,9 @@ class UserCard extends Component {
                     <h3 className="user-card__login">{data.login}</h3>
                 </div>
                 <div className="user-card__bottom">
-                    <p className="user-card__description">{data.bio}</p>
+                    {data.bio &&
+                        <p className="user-card__description">{data.bio}</p>
+                    }
                     <ul className="user-card__list">
                         {data.organizations.edges.length > 0 &&
                             <li className="user-card__list--users">
