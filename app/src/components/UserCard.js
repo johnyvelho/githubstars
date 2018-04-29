@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import RepositorieList from "./RepositorieList";
 
 class UserCard extends Component {
     render() {
@@ -23,7 +22,7 @@ class UserCard extends Component {
                         {data.organizations.edges.length > 0 &&
                             <li className="user-card__list--users">
                                 {data.organizations.edges.map((item, key) =>
-                                    <a target="_blank" href={item.node.url}>@{item.node.login}</a>
+                                    <a key={key} target="_blank" href={item.node.url}>@{item.node.login}</a>
                                 )}
                             </li>
                         }
