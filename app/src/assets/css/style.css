@@ -3,7 +3,12 @@
 body {
   font-family: 'Roboto';
   font-size: 16px;
-  font-weight: 400; }
+  font-weight: 400;
+  color: #4F4F4F; }
+
+input {
+  outline: none;
+  box-shadow: none; }
 
 .sr-only {
   position: absolute;
@@ -25,14 +30,121 @@ body {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     color: #4F4F4F; }
-  #main-search button {
-    cursor: pointer;
-    width: 17px;
-    height: 16px;
-    text-indent: -9999px;
+
+.button-search {
+  cursor: pointer;
+  width: 17px;
+  height: 16px;
+  text-indent: -9999px;
+  border: none;
+  background: url("./../images/ico-search.svg") no-repeat 0/100%;
+  position: absolute;
+  right: 36px;
+  top: 50%;
+  transform: translate(0, -50%); }
+
+.main-content {
+  max-width: 1124px;
+  padding: 128px 0 99px; }
+
+#header {
+  margin-bottom: 46px; }
+
+#search {
+  position: relative; }
+  #search input {
     border: none;
-    background: url("./../images/ico-search.svg") no-repeat 0/100%;
-    position: absolute;
-    right: 36px;
-    top: 50%;
-    transform: translate(0, -50%); }
+    border-bottom: 1px solid #BABABA;
+    padding: 8px 20px 8px 0;
+    color: #4F4F4F; }
+  #search button {
+    right: 0; }
+
+.user-card {
+  margin-top: 32px;
+  background: #5152B6;
+  border-radius: 5px; }
+  .user-card .user-card__top {
+    padding: 32px 16px;
+    background: rgba(0, 0, 0, 0.09);
+    color: #fff;
+    line-height: 23px; }
+  .user-card .user-card__bottom {
+    padding: 32px 16px;
+    color: #fff; }
+  .user-card .user-card__image {
+    margin-bottom: 17px; }
+  .user-card .user-card__name {
+    font-size: 20px; }
+  .user-card .user-card__login {
+    font-size: 20px;
+    font-weight: 300; }
+  .user-card .user-card__description {
+    font-size: 14px;
+    line-height: 14px;
+    padding-bottom: 34px; }
+  .user-card .user-card__list li {
+    display: block;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 16px; }
+    .user-card .user-card__list li:last-child {
+      margin-bottom: 0; }
+    .user-card .user-card__list li:before {
+      margin-right: 9px;
+      content: '';
+      display: inline-block;
+      background-size: 100%;
+      width: 15px; }
+    .user-card .user-card__list li.user-card__list--users:before {
+      height: 12px;
+      background: url("./../../assets/images/ico-users.svg") no-repeat; }
+    .user-card .user-card__list li.user-card__list--location:before {
+      height: 16px;
+      background: url("./../../assets/images/ico-location.svg") no-repeat; }
+    .user-card .user-card__list li.user-card__list--website:before {
+      height: 15px;
+      background: url("./../../assets/images/ico-website.svg") no-repeat; }
+
+.box-content-list {
+  padding: 32px;
+  background: #FFFFFF;
+  box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.25);
+  border-radius: 5px; }
+
+.card-item {
+  padding: 27px 32px;
+  margin-bottom: 33px;
+  background: #FFFFFF;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px; }
+  .card-item .card-item__title {
+    font-size: 20px;
+    line-height: 23px;
+    margin-bottom: 10px; }
+  .card-item .card-item__description {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19px;
+    margin-bottom: 12px; }
+  .card-item .card-item__star {
+    font-weight: 300; }
+    .card-item .card-item__star:before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      background: url("./../../assets/images/ico-star.svg") no-repeat;
+      padding-left: 24px; }
+
+.button {
+  cursor: pointer;
+  border-radius: 5px; }
+  .button.button--medium {
+    padding: 12px 32px; }
+  .button.button--color1 {
+    background: #FFFFFF;
+    border: 2px solid #5152B6;
+    color: #5152B6; }
+    .button.button--color1:hover, .button.button--color1.active {
+      background: #5152B6;
+      color: #fff; }

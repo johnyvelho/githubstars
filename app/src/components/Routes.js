@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 
 import Home from './../containers/Home';
 import Sigin from "./../containers/Sigin";
+import RepositoresListPage from "./../containers/RepositoresListPage";
 
 class Routes extends Component {
     render() {
@@ -10,6 +11,7 @@ class Routes extends Component {
             <div>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/sigin" component={Sigin} />
+                <Route exact path="/repositories" component={RepositoresListPage} />
             </div>
         );
     }

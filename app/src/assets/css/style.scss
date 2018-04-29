@@ -1,10 +1,17 @@
 @import "reset.css";
+@import "_variable.scss";
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
 
 body {
   font-family: 'Roboto';
   font-size: 16px;
   font-weight: 400;
+  color: $color_text;
+}
+
+input {
+  outline: none;
+  box-shadow: none;
 }
 
 .sr-only {
@@ -29,16 +36,161 @@ body {
     border-radius: 5px;
     color: #4F4F4F;
   }
-  button {
-    cursor: pointer;
-    width: 17px;
-    height: 16px;
-    text-indent: -9999px;
+}
+
+.button-search {
+  cursor: pointer;
+  width: 17px;
+  height: 16px;
+  text-indent: -9999px;
+  border: none;
+  background: url("./../images/ico-search.svg") no-repeat 0/100%;
+  position: absolute;
+  right: 36px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.main-content {
+  max-width: 1124px;
+  padding: 128px 0 99px;
+}
+
+#header {
+  margin-bottom: 46px;
+}
+
+#search {
+  position: relative;
+  input {
     border: none;
-    background: url("./../images/ico-search.svg") no-repeat 0/100%;
-    position: absolute;
-    right: 36px;
-    top: 50%;
-    transform: translate(0, -50%);
+    border-bottom: 1px solid #BABABA;
+    padding: 8px 20px 8px 0;
+    color: $color_text;
+  }
+  button {
+    right: 0;
+  }
+}
+
+.user-card {
+  margin-top: 32px;
+  background: $color1;
+  border-radius: 5px;
+
+  .user-card__top {
+    padding: 32px 16px;
+    background: rgba(0, 0, 0, 0.09);
+    color: $color_text_light;
+    line-height: 23px;
+  }
+
+  .user-card__bottom {
+    padding: 32px 16px;
+    color: $color_text_light;
+  }
+
+  .user-card__image {
+    margin-bottom: 17px;
+  }
+
+  .user-card__name {
+    font-size: 20px;
+  }
+  .user-card__login {
+    font-size: 20px;
+    font-weight: 300;
+  }
+  .user-card__description {
+    font-size: 14px;
+    line-height: 14px;
+    padding-bottom: 34px;
+  }
+  .user-card__list {
+    li {
+      display: block;
+      font-size: 14px;
+      line-height: 16px;
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &:before {
+        margin-right: 9px;
+        content: '';
+        display: inline-block;
+        background-size: 100%;
+        width: 15px;
+      }
+      &.user-card__list--users:before {
+        height: 12px;
+        background: url('./../../assets/images/ico-users.svg') no-repeat;
+      }
+      &.user-card__list--location:before {
+        height: 16px;
+        background: url('./../../assets/images/ico-location.svg') no-repeat;
+      }
+      &.user-card__list--website:before {
+        height: 15px;
+        background: url('./../../assets/images/ico-website.svg') no-repeat;
+      }
+    }
+  }
+}
+
+.box-content-list {
+  padding: 32px;
+  background: #FFFFFF;
+  box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+
+.card-item {
+  padding: 27px 32px;
+  margin-bottom: 33px;
+  background: #FFFFFF;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+
+  .card-item__title {
+    font-size: 20px;
+    line-height: 23px;
+    margin-bottom: 10px;
+  }
+  .card-item__description {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19px;
+    margin-bottom: 12px;
+  }
+  .card-item__star {
+    &:before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      background: url("./../../assets/images/ico-star.svg") no-repeat;
+      padding-left: 24px;
+    }
+
+    font-weight: 300;
+  }
+}
+
+.button {
+  cursor: pointer;
+  border-radius: 5px;
+  &.button--medium {
+    padding: 12px 32px;
+  }
+  &.button--color1 {
+    background: #FFFFFF;
+    border: 2px solid $color1;
+    color: $color1;
+
+    &:hover, &.active {
+      background: $color1;
+      color: #fff;
+    }
   }
 }

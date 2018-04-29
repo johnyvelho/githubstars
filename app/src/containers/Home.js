@@ -40,7 +40,7 @@ class Home extends Component {
                     {isAuthenticated() ?
                         <div id="main-search" className="w-75 center">
                             <input type="text" className="dib w-100" placeholder="github username"/>
-                            <button>Search</button>
+                            <button className="button-search">Search</button>
                         </div>
                     :
                         <p className="f3 lh-copy">
