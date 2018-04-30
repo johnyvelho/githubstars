@@ -9,7 +9,7 @@ body {
   font-weight: 400;
   color: #4F4F4F; }
 
-input {
+input, button:focus, button:visited {
   outline: none;
   box-shadow: none; }
 

@@ -12,9 +12,8 @@ class RepositorieListItem extends Component {
                     <p className="card-item__description">{data.description}</p>
                     <div className="card-item__star">{data.stargazers.totalCount}</div>
                 </div>
-                <div className="w-20">
-                    {/*<ButtonStar id={data.id}/>*/}
-                    <button className="button button--medium button--color1">star</button>
+                <div className="w-20" data-id={data.id}>
+                    <ButtonStar id={data.id}/>
                 </div>
             </div>
         );

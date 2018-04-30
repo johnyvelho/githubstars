@@ -11,7 +11,7 @@ body {
   color: $color_text;
 }
 
-input {
+input, button:focus, button:visited {
   outline: none;
   box-shadow: none;
 }

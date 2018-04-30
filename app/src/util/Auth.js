@@ -26,3 +26,31 @@ export function setUserData(data) {
 export function getUserData() {
     return JSON.parse(localStorage.getItem(KEY_USER_DATA));
 }
+
+export function getStarrableRepositories() {
+    return getUserData().starredRepositoriesId;
+}
+
+export function addStarrableRepository(id) {
+    let newStarrableRepositories = getStarrableRepositories();
+    newStarrableRepositories.push(id);
+
+    let userData = getUserData();
+    userData.starredRepositoriesId = newStarrableRepositories;
+
+    setUserData(userData);
+}
+
+export function removeStarrableRepository(id) {
+    let newStarrableRepositories = getStarrableRepositories();
+
+    if (newStarrableRepositories.includes(id)) {
+        let index = newStarrableRepositories.indexOf(id);
+        newStarrableRepositories.splice(index, 1);
+
+        let userData = getUserData();
+        userData.starredRepositoriesId = newStarrableRepositories;
+
+        setUserData(userData);
+    }
+}

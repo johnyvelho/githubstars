@@ -26,3 +26,21 @@ test('set and receive user data', () => {
     Auth.setUserData({name: 'test'});
     expect(Auth.getUserData().name).toBe('test');
 });
+
+test('add starrable repositorie', () => {
+    Auth.setUserData({name: 'test', starredRepositoriesId: []});
+    expect(Auth.getStarrableRepositories().length).toBe(0);
+
+    Auth.addStarrableRepository('1');
+    expect(Auth.getStarrableRepositories().length).toBe(1);
+});
+
+test('remove starrable repositorie', () => {
+    Auth.setUserData({name: 'test', starredRepositoriesId: ['1', '2']});
+    expect(Auth.getStarrableRepositories().length).toBe(2);
+
+    Auth.removeStarrableRepository('1');
+    expect(Auth.getStarrableRepositories().length).toBe(1);
+    Auth.removeStarrableRepository('2');
+    expect(Auth.getStarrableRepositories().length).toBe(0);
+});
