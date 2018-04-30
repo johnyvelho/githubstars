@@ -8,6 +8,8 @@ export const getStarredRepositoresUserBySearch = gql`
             edges {
                 node {
                     ... on User {
+                        id
+                        databaseId
                         avatarUrl
                         name
                         login
@@ -26,6 +28,8 @@ export const getStarredRepositoresUserBySearch = gql`
 
                         starredRepositories(first: 100) {
                             nodes {
+                                id
+                                databaseId
                                 name
                                 nameWithOwner
                                 description

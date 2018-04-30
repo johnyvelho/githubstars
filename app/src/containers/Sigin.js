@@ -1,20 +1,19 @@
-import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import React, {Component} from 'react';
+import {Link} from "react-router-dom";
 import queryString from 'query-string';
-import { setUserToken } from './../util/Auth';
+import {setUserToken, setUserData} from './../util/Auth';
 import * as Api from './../util/Api';
+import {client} from './../util/ApolloClient';
+import {viewer} from "../graphql/queries/viewer";
 
 import logo from './../assets/images/logo.svg';
-import { Loading } from 'element-react';
+import {Loading} from 'element-react';
+
 
 class Sigin extends Component {
 
     constructor(props) {
         super(props);
-
-        this.state = {
-            tokenSetted: false
-        }
     }
 
     componentDidMount() {
@@ -24,7 +23,30 @@ class Sigin extends Component {
                 Api.getAccessToken(queryParsed.code).then(
                     (response) => {
                         setUserToken(response.data.access_token);
-                        this.props.history.push('/');
+
+                        client.query({
+                            query: viewer,
+                            variables: {
+                                repositoriesFirst: 100,
+                            }
+                        }).then((response) => {
+                            const data = response.data.viewer;
+                            const newData = {};
+
+                            Object.keys(data).map(function(key, index) {
+                                if (key !== 'starredRepositories') {
+                                    newData[key] = data[key];
+                                }
+                            });
+
+                            newData.starredRepositoriesId = data.starredRepositories.edges.map((item, key) => {
+                                return item.node.id;
+                            });
+
+                            setUserData(newData);
+
+                            this.props.history.push('/');
+                        });
                     }
                 );
             }
@@ -45,5 +67,4 @@ class Sigin extends Component {
         );
     }
 }
-
 export default Sigin;

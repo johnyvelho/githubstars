@@ -21,3 +21,8 @@ test('user must be authenticated', () => {
 test('user must be not redirected to login', () => {
     expect(Auth.redirectToLoginIfNotAuthenticated()).toBeNull();
 });
+
+test('set and receive user data', () => {
+    Auth.setUserData({name: 'test'});
+    expect(Auth.getUserData().name).toBe('test');
+});

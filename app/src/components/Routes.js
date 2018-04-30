@@ -11,7 +11,7 @@ class Routes extends Component {
             <div>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/sigin" component={Sigin} />
-                <Route path="/:search" component={RepositoresListPage} />
+                <Route path="/repositories/:search" component={RepositoresListPage} />
             </div>
         );
     }

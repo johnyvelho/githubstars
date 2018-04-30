@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Link} from "react-router-dom";
-import RepositorieList from "./RepositorieList";
+import ButtonStar from './../containers/ButtonStar';
 
 class RepositorieListItem extends Component {
     render() {
@@ -14,6 +13,7 @@ class RepositorieListItem extends Component {
                     <div className="card-item__star">{data.stargazers.totalCount}</div>
                 </div>
                 <div className="w-20">
+                    {/*<ButtonStar id={data.id}/>*/}
                     <button className="button button--medium button--color1">star</button>
                 </div>
             </div>

@@ -27,7 +27,7 @@ export default function search(WrappedComponent) {
         }
 
         onClickSearch(e) {
-            this.props.history.push('/' + this.state.inputSearch);
+            this.props.history.push('/repositories/' + this.state.inputSearch);
         }
 
         render() {

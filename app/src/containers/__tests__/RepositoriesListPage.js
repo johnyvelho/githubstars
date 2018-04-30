@@ -20,7 +20,7 @@ const cardProps = {
 
 it('should render without throwing an error', function() {
     const wrapper = shallow(
-        <MemoryRouter initialEntries={[ '/johnyvelho' ]}>
+        <MemoryRouter initialEntries={[ '/repositories/johnyvelho' ]}>
             <RepositoresListPage />
         </MemoryRouter>
     );
