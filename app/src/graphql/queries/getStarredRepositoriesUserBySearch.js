@@ -1,7 +1,7 @@
 import gql from "graphql-tag";
 
 export const getStarredRepositoresUserBySearch = gql`
-    query($query: String!, $qty: Int!) {
+    query($query: String!, $firstStarrableRepositories: Int = 7, $afterStarrableRepositories: String) {
         search(type:USER, query:$query, first:1) {
             codeCount
 
@@ -26,51 +26,32 @@ export const getStarredRepositoresUserBySearch = gql`
                         }
 
 
-                        starredRepositories(first: 100) {
-                            nodes {
-                                id
-                                databaseId
-                                name
-                                nameWithOwner
-                                description
-                                url
-                                stargazers{
-                                    totalCount
+                        starredRepositories(first: $firstStarrableRepositories, after: $afterStarrableRepositories) {
+                            edges {
+                                cursor
+                                node {
+                                    id
+                                    databaseId
+                                    name
+                                    nameWithOwner
+                                    description
+                                    url
+                                    stargazers{
+                                        totalCount
+                                    }
                                 }
+                            }
+                            pageInfo {
+                                endCursor
+                                startCursor
+                                hasNextPage
+                                hasPreviousPage
                             }
                         }
                     }
                 }
             }
 
-            nodes {
-                ... on User {
-                    avatarUrl
-                    name
-                    login
-                    bio
-                    location
-                    organizations(first: 3) {
-                        edges {
-                            node {
-                                login
-                            }
-                        }
-                    }
-                    
-                    starredRepositories(first: $qty) {
-                        nodes {
-                            name
-                            nameWithOwner
-                            description
-                            url
-                            stargazers{
-                                totalCount
-                            }
-                        }
-                    }
-                }
-            }
         }
     }
 `;

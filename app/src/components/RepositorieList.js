@@ -6,13 +6,11 @@ import RepositorieListItem from "./RepositorieListItem";
 class RepositorieList extends Component {
     render() {
         return (
-            <div className="box-content-list">
-                <ul>
-                    {this.props.data.map((item, key) =>
-                        <li key={key}><RepositorieListItem data={item}/></li>
-                    )}
-                </ul>
-            </div>
+            <ul>
+                {this.props.data.map((item, key) =>
+                    <li key={key}><RepositorieListItem data={item.node}/></li>
+                )}
+            </ul>
         );
     }
 }

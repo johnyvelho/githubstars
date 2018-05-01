@@ -12,10 +12,14 @@ class NotFound extends Component {
         return (
             <div className="not-found pv6 center tc w-100">
                 <img src={notFound} className="dib" alt="Not Found"/>
-                <p className="not-found__text">User not Found</p>
+                <p className="not-found__text">{this.props.message}</p>
             </div>
         );
     }
 }
+
+NotFound.defaultProps = {
+  message: 'User not found'
+};
 
 export default NotFound;

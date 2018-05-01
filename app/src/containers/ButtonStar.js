@@ -11,12 +11,27 @@ class ButtonStar extends Component {
     constructor(props) {
         super(props);
 
-        this.starredRepositoriesId = getUserData().starredRepositoriesId;
-
         this.state = {
-            starrable: this.starredRepositoriesId.includes(this.props.id),
+            starrable: null,
             loading: false
         };
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        return true;
+    }
+
+    componentDidMount() {
+        console.log('teste');
+        this.starredRepositoriesId = getUserData().starredRepositoriesId;
+        this.setState({
+            starrable: this.starredRepositoriesId.includes(this.props.id),
+        });
+    }
+
+    componentWillReceiveProps(nextProps) {
+        console.log('aqui->',nextProps);
+        console.log('aqui2->',this.starredRepositoriesId.includes(this.props.id));
     }
 
     onClickAddStar(id, e) {
