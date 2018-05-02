@@ -10,14 +10,18 @@ Dentro da pasta /api renomeie o arquivo .env.example para .env.
 
 Edite o arquivo e adicione os valores de GITHUB_CLIENT_ID e GITHUB_CLIENT_SECRET
 
-Ainda dentro da pasta /api. Execute os comandos:
+Ainda dentro da pasta /api execute os comandos:
 
 ```
 composer install
 docker-compose up
 ```
 
-Navegue até a pasta /app e execute os seguintes comandos:
+Navegue até a pasta /app e renomeie o arquivo .env_example para .env.
+
+Edite o arquivo e adicione o valor de REACT_APP_GITHUB_CLIENT_ID
+
+Ainda dentro da pasta /app, execute os comandos: 
 
 ```
 npm install
