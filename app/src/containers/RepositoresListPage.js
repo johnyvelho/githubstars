@@ -3,7 +3,7 @@ import { compose, graphql } from 'react-apollo';
 import { redirectToLoginIfNotAuthenticated } from './../util/Auth';
 import { Loading } from 'element-react';
 
-import Header from './../components/Header';
+import Header from './Header';
 import UserCard from "../components/UserCard";
 import RepositorieList from "../components/RepositorieList";
 import {getStarredRepositoresUserBySearch} from "../graphql/queries/getStarredRepositoriesUserBySearch";

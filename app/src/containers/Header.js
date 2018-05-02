@@ -5,7 +5,7 @@ import search from './../hocs/Search';
 import { withRouter } from 'react-router';
 import { redirectToLoginIfNotAuthenticated } from './../util/Auth';
 import { getUserData } from './../util/Auth'
-import {DesktopTablet, Mobile} from './MediaQuery';
+import {DesktopTablet, Mobile} from './../components/MediaQuery';
 
 import logo from './../assets/images/logo.svg';
 

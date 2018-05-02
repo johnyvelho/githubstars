@@ -22,16 +22,10 @@ class ButtonStar extends Component {
     }
 
     componentDidMount() {
-        console.log('teste');
         this.starredRepositoriesId = getUserData().starredRepositoriesId;
         this.setState({
             starrable: this.starredRepositoriesId.includes(this.props.id),
         });
-    }
-
-    componentWillReceiveProps(nextProps) {
-        console.log('aqui->',nextProps);
-        console.log('aqui2->',this.starredRepositoriesId.includes(this.props.id));
     }
 
     onClickAddStar(id, e) {
