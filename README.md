@@ -4,29 +4,41 @@ App para listagem de repositórios estrelados de usuários Github.
 
 ## Getting Started
 
+Necessário configurar oauth application na conta do github:
+https://github.com/settings/developers
+
+
 ### Installing
 
-Dentro da pasta /api renomeie o arquivo .env.example para .env.
+1. Necessário configurar oauth application na conta github:
 
-Edite o arquivo e adicione os valores de GITHUB_CLIENT_ID e GITHUB_CLIENT_SECRET
+    https://github.com/settings/developers
 
-Ainda dentro da pasta /api execute os comandos:
+    Em "Authorization callback URL" informar a seguinte URL para testes local:
 
-```
-composer install
-docker-compose up
-```
+    http://localhost:3000/sigin
 
-Navegue até a pasta /app e renomeie o arquivo .env_example para .env.
+2. Dentro da pasta /api renomeie o arquivo .env.example para .env.
 
-Edite o arquivo e adicione o valor de REACT_APP_GITHUB_CLIENT_ID
+    Edite o arquivo e adicione os valores de GITHUB_CLIENT_ID e GITHUB_CLIENT_SECRET
 
-Ainda dentro da pasta /app, execute os comandos: 
+    Ainda dentro da pasta /api execute os comandos:
 
-```
-npm install
-npm start
-```
+    ```
+    composer install
+    docker-compose up
+    ```
+    
+    Navegue até a pasta /app e renomeie o arquivo .env_example para .env.
+    
+    Edite o arquivo e adicione o valor de REACT_APP_GITHUB_CLIENT_ID
+    
+    Ainda dentro da pasta /app, execute os comandos: 
+    
+    ```
+    npm install
+    npm start
+    ```
 
 ## Built With
 
