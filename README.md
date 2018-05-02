@@ -4,10 +4,6 @@ App para listagem de repositórios estrelados de usuários Github.
 
 ## Getting Started
 
-Necessário configurar oauth application na conta do github:
-https://github.com/settings/developers
-
-
 ### Installing
 
 1. Necessário configurar oauth application na conta github:
