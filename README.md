@@ -22,7 +22,8 @@ App para listagem de repositórios estrelados de usuários Github.
 
     ```
     composer install
-    
+    ```
+    ```
     docker-compose up
     ```
     
@@ -34,7 +35,8 @@ App para listagem de repositórios estrelados de usuários Github.
     
     ```
     npm install
-    
+    ```
+    ```
     npm start
     ```
 
