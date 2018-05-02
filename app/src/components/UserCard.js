@@ -8,8 +8,8 @@ class UserCard extends Component {
         return (
             <div className="user-card">
                 <div className="user-card__top tc">
-                    <div className="user-card__image">
-                        <img src={data.avatarUrl} width="160" height="160" alt="" className="br-100 mw-100"/>
+                    <div className="user-card__image center">
+                        <img src={data.avatarUrl} alt="" className="br-100 mw-100"/>
                     </div>
                     <h2 className="user-card__name">{data.name}</h2>
                     <h3 className="user-card__login">{data.login}</h3>

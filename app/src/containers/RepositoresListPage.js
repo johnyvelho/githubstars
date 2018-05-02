@@ -3,7 +3,7 @@ import { compose, graphql } from 'react-apollo';
 import { redirectToLoginIfNotAuthenticated } from './../util/Auth';
 import { Loading } from 'element-react';
 
-import Header from './Header';
+import Header from './../components/Header';
 import UserCard from "../components/UserCard";
 import RepositorieList from "../components/RepositorieList";
 import {getStarredRepositoresUserBySearch} from "../graphql/queries/getStarredRepositoriesUserBySearch";
@@ -61,12 +61,12 @@ class RepositoresListPage extends Component {
         const { fetchStarredRepositories } = this.props;
 
         return (
-            <div className="main-content center">
+            <div className="main-content center ph0 ph3-ns">
                 <Header/>
 
                 {!fetchStarredRepositories.loading && fetchStarredRepositories.search.edges.length > 0 &&
-                    <div className="flex flex-wrap">
-                        <div className="w-20">
+                    <div className="flex-ns flex-wrap">
+                        <div className="w-100 w-30-m w-20-ns mb4 mb0-ns">
                             <UserCard data={{
                                 avatarUrl: fetchStarredRepositories.search.edges[0].node.avatarUrl,
                                 name: fetchStarredRepositories.search.edges[0].node.name,
@@ -77,7 +77,7 @@ class RepositoresListPage extends Component {
                                 organizations: fetchStarredRepositories.search.edges[0].node.organizations,
                             }}/>
                         </div>
-                        <div className="w-80">
+                        <div className="w-100 w-70-m w-80-ns">
                             <div className="box-content-list">
                                 {fetchStarredRepositories.search.edges[0].node.starredRepositories.edges.length > 0 ?
                                     <InfiniteScroll

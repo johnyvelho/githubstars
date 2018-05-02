@@ -1,5 +1,6 @@
 @import "reset.css";
 @import "_variable.scss";
+@import "_function.scss";
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
 
 html,body { height:100%; }
@@ -55,7 +56,17 @@ input, button:focus, button:visited {
 
 .main-content {
   max-width: 1124px;
-  padding: 128px 0 99px;
+  padding-top: 128px;
+  padding-bottom: 99px;
+
+  @include mediaQuery('sm') {
+    padding-top: 70px;
+    padding-bottom: 50px;
+  }
+
+  @include mediaQuery('xs') {
+    padding: 20px 0 20px;
+  }
 }
 
 #header {
@@ -94,6 +105,8 @@ input, button:focus, button:visited {
 
   .user-card__image {
     margin-bottom: 17px;
+    max-width: 160px;
+    max-height: 160px;
   }
 
   .user-card__name {
@@ -155,6 +168,10 @@ input, button:focus, button:visited {
   box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   min-height: 500px;
+
+  @include mediaQuery('sm') {
+    padding: 15px;
+  }
 }
 
 .card-item {
@@ -163,6 +180,10 @@ input, button:focus, button:visited {
   background: #FFFFFF;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
+
+  @include mediaQuery('sm') {
+    padding: 15px;
+  }
 
   .card-item__title {
     font-size: 20px;

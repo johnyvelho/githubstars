@@ -1,0 +1,64 @@
+// PX TO EM
+@function em($pixels, $context: $browserContext) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1em;
+}
+
+// clearfix
+@mixin clearfix() {
+  &:after, &:before{
+    display: table;
+    content: "";
+    clear: both;
+  }
+}
+
+// vendor prefix
+@mixin prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
+// styling placeholder
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}
+
+// typo
+@mixin typo($size:12px, $browserCcontext:$browserContext, $w:400, $family:$fontFamily, $lh:1) {
+  font-family: $family;
+  font-size: em($size, $browserContext);
+  font-weight: $w;
+  line-height: $lh;
+}
+
+// transition
+@mixin transition($transition: 200ms all) {
+  @include prefix('transition', $transition);
+}
+
+// Media query
+@mixin mediaQuery($media) {
+  @if($media == 'xs') {
+    @media (max-width: 576px) {
+      @content
+    }
+  }@else if($media == 'sm') {
+    @media (max-width: 768px) {
+      @content
+    }
+  }
+}

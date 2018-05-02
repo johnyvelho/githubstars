@@ -48,7 +48,15 @@ input, button:focus, button:visited {
 
 .main-content {
   max-width: 1124px;
-  padding: 128px 0 99px; }
+  padding-top: 128px;
+  padding-bottom: 99px; }
+  @media (max-width: 768px) {
+    .main-content {
+      padding-top: 70px;
+      padding-bottom: 50px; } }
+  @media (max-width: 576px) {
+    .main-content {
+      padding: 20px 0 20px; } }
 
 #header {
   margin-bottom: 46px; }
@@ -76,7 +84,9 @@ input, button:focus, button:visited {
     padding: 32px 16px;
     color: #fff; }
   .user-card .user-card__image {
-    margin-bottom: 17px; }
+    margin-bottom: 17px;
+    max-width: 160px;
+    max-height: 160px; }
   .user-card .user-card__name {
     font-size: 20px; }
   .user-card .user-card__login {
@@ -120,6 +130,9 @@ input, button:focus, button:visited {
   box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   min-height: 500px; }
+  @media (max-width: 768px) {
+    .box-content-list {
+      padding: 15px; } }
 
 .card-item {
   padding: 27px 32px;
@@ -127,6 +140,9 @@ input, button:focus, button:visited {
   background: #FFFFFF;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
   border-radius: 5px; }
+  @media (max-width: 768px) {
+    .card-item {
+      padding: 15px; } }
   .card-item .card-item__title {
     font-size: 20px;
     line-height: 23px;
